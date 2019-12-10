@@ -1,16 +1,20 @@
-import React from 'react';
-import './../Search.css';
+import React, { Component } from 'react';
+import './../styles/Search.css';
 
-const Search = ({weatherMethod}) =>(
-    <div id="search-bar">
-      <form onSubmit={weatherMethod}> 
-      <label class="form-label"
-      for="searchCity">Choose city:</label>
+class Search extends Component {
+    constructor (cityMethod) {
+      super();
+      this.cityMethod = cityMethod
+    }
+
+    render() {
+    return(<div id="search-bar">     
+      <label className="form-label"
+      htmlFor="searchCity">Choose city:</label>
     <input type="text" name = "searchCity"></input> 
-    <input type="submit" name = "sumbitButton"></input>
-    </form>
-    </div>
-  )
-
+    <input type="button" value = "submit"></input>
+    </div>)
+    }
+}
 
 export default Search;

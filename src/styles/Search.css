@@ -1,0 +1,41 @@
+#search-bar{ 
+  text-align: center;
+  
+}
+
+input[type=text] {
+  width: 80%;
+  padding: 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #CC7722;
+  outline: none;
+  color: white;
+  
+  /* opacity: 0.5; */
+}
+ .form-label {
+  font-size: 30px;
+  color: white;
+  padding: 8px;  
+  
+}
+
+input[type=button] {
+  border-radius: 8px;
+  background-color: black;
+  border: 2px solid #CC7722;
+  color: white;
+  cursor: pointer;
+  padding: 12px 22px;
+  text-decoration: none;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+}
+
+input[type=button]:hover {
+background-color: #CC7722;
+color: #fff;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
