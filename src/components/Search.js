@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
 import './../styles/Search.css';
-
+import { setCity } from '../redux/actions';
+import { connect } from 'react-redux';
+ 
 class Search extends Component {
-    constructor (cityMethod) {
-      super();
-      this.cityMethod = cityMethod
-    }
+  constructor(props){
+    super(props);
+    this.state = {input: ""};
+  }
 
-    render() {
-    return(<div id="search-bar">     
+  updateInput = input => {
+    this.setState({ input });
+  };
+
+  handleSetCity = () =>{
+    this.props.setCity(this.state.input);
+  }
+
+  render() {
+    return(
+    <div id="search-bar">     
       <label className="form-label"
       htmlFor="searchCity">Choose city:</label>
-    <input type="text" name = "searchCity"></input> 
-    <input type="button" value = "submit"></input>
-    </div>)
-    }
+    <input type="text" name = "searchCity" onChange = {e => this.updateInput(e.target.value)}></input> 
+    <input type="button" value="Search" className="submitCity" onClick={this.handleSetCity}></input>
+    </div>
+    )
+  }
 }
 
-export default Search;
+export default connect(
+  null,
+  {setCity}
+)(Search);

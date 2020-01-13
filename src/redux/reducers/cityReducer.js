@@ -3,7 +3,7 @@ import { SET_CITY } from "../actionTypes"
  
  
  const initialState = {
-     city: undefined
+     city: ""
  }
 
  const cityReducer = (state = initialState, action) =>{
